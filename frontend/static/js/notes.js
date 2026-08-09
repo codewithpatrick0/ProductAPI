@@ -19,4 +19,20 @@ async function add_note(){
     })
 }
 
+async function get_notes() {
+    const response = await call_fetch('GET', 'http://127.0.0.1:8000/notes/', {})
+    console.log(response)
+    const list = document.getElementById('notes-list')
+    list.innerHTML = ''
+
+    response.data.forEach(note => {
+        const clone = document.getElementById('note-item-template').content.cloneNode(true)
+        clone.querySelector('.note-item-title').textContent = note.title
+        clone.querySelector('.note-item-content').textContent = note.content
+
+        list.appendChild(clone)
+    });
+}
+
 add_note() 
+get_notes()
