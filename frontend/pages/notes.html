@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Notes</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <main class="notes-card">
+        <span class="auth-card__brand">NOTES</span>
+        <h1 class="auth-card__title">Your Notes</h1>
+        <p class="auth-card__subtitle">Create, edit and delete your notes</p>
+
+        <form id="note-form-create" class="note-form-create">
+            <div class="form-field">
+                <label for="note-title-create">Title</label>
+                <input type="text" id="note-title-create" name="title" minlength="3" maxlength="50" required>
+            </div>
+
+            <div class="form-field">
+                <label for="note-content-create">Content</label>
+                <textarea id="note-content-create" name="content" minlength="3" required></textarea>
+            </div>
+
+            <button type="submit" id="note-submit-create" class="auth-submit">Add Note</button>
+        </form>
+
+        <div id="notes-list" class="notes-list"></div>
+    </main>
+
+    <template id="note-item-template">
+        <article class="note-item">
+            <div class="note-item-view">
+                <h2 class="note-item-title"></h2>
+                <p class="note-item-content"></p>
+                <div class="note-item-actions">
+                    <button type="button" class="note-item-edit-btn">Edit</button>
+                    <button type="button" class="note-item-delete-btn">Delete</button>
+                </div>
+            </div>
+
+            <form class="note-item-edit-form">
+                <div class="form-field">
+                    <label>Title</label>
+                    <input type="text" class="note-item-edit-title-input" minlength="3" maxlength="50" required>
+                </div>
+                <div class="form-field">
+                    <label>Content</label>
+                    <textarea class="note-item-edit-content-input" minlength="3" required></textarea>
+                </div>
+                <div class="note-item-actions">
+                    <button type="submit" class="note-item-save-btn">Save</button>
+                    <button type="button" class="note-item-cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </article>
+    </template>
+
+    <script type="module" defer src="../static/js/notes.js"></script>
+</body>
+</html>

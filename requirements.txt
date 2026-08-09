@@ -1,0 +1,8 @@
+fastapi==0.141.1
+uvicorn==0.52.1
+SQLAlchemy==2.0.51
+alembic==1.19.0
+python-dotenv==1.2.2
+PyJWT==2.13.0
+pwdlib==0.3.0
+argon2-cffi==25.1.0

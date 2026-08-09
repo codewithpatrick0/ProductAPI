@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <main class="auth-card">
+        <span class="auth-card__brand">NOTES</span>
+        <h1 class="auth-card__title">Create Account</h1>
+        <p class="auth-card__subtitle">Fill in your details to sign up</p>
+
+        <form class="auth-form-register" id="auth-form-register">
+            <div class="form-field">
+                <label for="name">First name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="new-password" required>
+            </div>
+
+            <button type="submit" class="auth-submit">Sign Up</button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account? <a href="login.html">Log in</a>
+        </p>
+    </main>
+
+    <script type='module' defer src="../static/js/auth.js"></script>
+</body>
+</html>

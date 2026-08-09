@@ -1,0 +1,215 @@
+:root {
+    --black: #000000;
+    --ink: #1c1c1c;
+    --gray-dark: #4a4a4a;
+    --gray: #7a7a7a;
+    --gray-light: #c9c9c9;
+    --gray-lighter: #e4e4e4;
+    --off-white: #f4f4f2;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--off-white);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 380px;
+    background-color: var(--white);
+    border: 1px solid var(--gray-lighter);
+    padding: 48px 40px;
+}
+
+.auth-card__brand {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+}
+
+.auth-card__title {
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--black);
+}
+
+.auth-card__subtitle {
+    font-size: 14px;
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 36px;
+}
+
+.form-field {
+    margin-bottom: 22px;
+}
+
+.form-field label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gray-dark);
+    margin-bottom: 8px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background-color: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 0;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background-color: var(--ink);
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray-dark);
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-lighter);
+}
+
+.auth-switch a {
+    color: var(--black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.auth-switch a:hover {
+    color: var(--gray-dark);
+}
+
+.notes-card {
+    width: 100%;
+    max-width: 640px;
+    background-color: var(--white);
+    border: 1px solid var(--gray-lighter);
+    padding: 48px 40px;
+}
+
+.form-field textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background-color: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 0;
+    resize: vertical;
+}
+
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+.notes-list {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-lighter);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.note-item {
+    border: 1px solid var(--gray-lighter);
+    padding: 20px;
+}
+
+.note-item-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.note-item-content {
+    font-size: 14px;
+    color: var(--gray-dark);
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+}
+
+.note-item-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.note-item-actions button {
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+    cursor: pointer;
+}
+
+.note-item-actions button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.note-item-edit-form {
+    display: none;
+    margin-top: 16px;
+}
+
+.note-item.is-editing .note-item-view {
+    display: none;
+}
+
+.note-item.is-editing .note-item-edit-form {
+    display: block;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <main class="auth-card">
+        <span class="auth-card__brand">NOTES</span>
+        <h1 class="auth-card__title">Login</h1>
+        <p class="auth-card__subtitle">Enter your credentials to continue</p>
+
+        <form id='auth-form-login' class="auth-form-login">
+            <div class="form-field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="auth-submit">Log In</button>
+        </form>
+
+        <p class="auth-switch">
+            Don't have an account? <a href="register.html">Sign up</a>
+        </p>
+    </main>
+
+    <script type='module' defer src="../static/js/auth.js"></script>
+</body>
+</html>
