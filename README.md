@@ -63,7 +63,7 @@ cp .env.example .env
 ```
 DATABASE_URL=sqlite:///./app.db
 SECRET_KEY=your_secret_key
-REFRESH_KEY=your_refresh_secret_key
+REFRESH_SECRET_KEY=your_refresh_secret_key
 ```
 
 ### 4. Run database migrations
