@@ -12,8 +12,11 @@ async function register() {
         
         if (!response.ok) {
             alert('Algo falló!')
+        } else {
+            alert('Loged in')
         }
         console.log(response)
+        
     })
 }
 
@@ -30,6 +33,7 @@ async function login() {
         if (!response.ok) {
             alert('Algo falló!')
         } else {
+            alert('Loged in')
             schedule_refresh()
         }
         console.log(response)

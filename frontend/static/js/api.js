@@ -15,7 +15,7 @@ export async function call_fetch(method,
     }
     try {
         const response = await fetch(url, config)
-        const data = await response.json()
+        const data = response.status === 204 ? null : await response.json()
         return {
                 ok: response.ok,
                 status: response.status,
