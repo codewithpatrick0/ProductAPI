@@ -24,14 +24,16 @@ A notes API with JWT-based authentication, built with **FastAPI**, **SQLAlchemy*
 
 ```
 .
-├── main.py           # FastAPI app entry point
-├── routes/            # API routes (auth, notes)
-├── crud/               # Database operations
-├── models/             # SQLAlchemy ORM models
-├── schemes/             # Pydantic schemas for request/response validation
-├── database/             # Database engine and session configuration
-├── security/               # Password hashing and JWT helpers
-├── alembic/                 # Database migrations
+├── backend/
+│   ├── main.py          # FastAPI app entry point
+│   ├── routes/           # API routes (auth, notes)
+│   ├── crud/               # Database operations
+│   ├── models/             # SQLAlchemy ORM models
+│   ├── schemes/             # Pydantic schemas for request/response validation
+│   ├── database/             # Database engine and session configuration
+│   ├── security/               # Password hashing and JWT helpers
+│   └── alembic/                 # Database migrations
+├── alembic.ini            # Alembic config (kept at project root)
 └── frontend/                 # Static HTML/JS pages for manual testing
 ```
 
@@ -74,8 +76,10 @@ alembic upgrade head
 
 ### 5. Run the server
 
+Run from the project root; `--app-dir backend` tells uvicorn where `main.py` lives while keeping the working directory (and thus `.env` / `app.db` resolution) at the project root:
+
 ```bash
-uvicorn main:app --reload
+uvicorn main:app --reload --app-dir backend
 ```
 
 The API will be available at `http://127.0.0.1:8000`, and the interactive docs at `http://127.0.0.1:8000/docs`.

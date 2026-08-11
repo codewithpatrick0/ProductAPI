@@ -49,9 +49,9 @@ def get_user_by_id(db: Session, user_id: int) -> User | None:
 def get_user_by_username(db: Session, username: str) ->  User | None:
     return db.execute(select(User).where(User.username == username)).scalar_one_or_none()
 
-def refresh_user(token: str) -> AccessTokenResponse:
+def refresh_user(refresh_token: str) -> AccessTokenResponse:
     try:
-        user_id = tokens.verify_refresh_token(token)
+        user_id = tokens.verify_refresh_token(refresh_token)
     except jwt.InvalidTokenError:
         raise InvalidTokenError
 
