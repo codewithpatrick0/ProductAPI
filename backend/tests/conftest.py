@@ -1,13 +1,16 @@
 from dataclasses import dataclass
 
 import pytest
+from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from database.base import Base
+from database.connection import get_db
 import models
 
+from main import app
 from security.tokens import create_refresh_token, create_access_token
 from crud.user_crud import create_user
 from crud.note_crud import create_note
@@ -75,6 +78,26 @@ def created_note(db_session, registered_user):
         title='HelloWorld',
         content='HI!'
     ))
+
+
+@pytest.fixture
+def client(db_session):
+    def override_get_db():
+        yield db_session
+
+    app.dependency_overrides[get_db] = override_get_db
+
+    with TestClient(app) as test_client:
+        yield test_client
+
+    app.dependency_overrides.clear()
+
+
+@pytest.fixture
+def authenticated_client(client, registered_user):
+    access_token = create_access_token(registered_user.user.id)
+    client.cookies.set('access_token', access_token)
+    return client
 
 
 
